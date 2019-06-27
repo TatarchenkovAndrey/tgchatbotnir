@@ -7,8 +7,8 @@ from deeppavlov.core.commands.infer import build_model
 from deeppavlov.core.commands.train import train_evaluate_model_from_config
 
 print("import successful")
-far = train_evaluate_model_from_config(configs.faq.tfidf_logreg_en_faq)
-faq = build_model(configs.faq.tfidf_logreg_en_faq, download = True)
+far = train_evaluate_model_from_config("./config.json")
+faq = build_model("./config.json", download = True)
 model_config = read_json("./config.json")
 model_config["dataset_reader"]["data_path"] = "./faq_school_en.csv"
 model_config["dataset_reader"]["data_url"] = None
